@@ -8,7 +8,6 @@ public class StockMarketChartingAppApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(StockMarketChartingAppApplication.class, args);
-		
 	}
 
 }

@@ -4,9 +4,11 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -27,5 +29,8 @@ public class IPO {
 	private Date dateTime;
 	@Column(name = "remarks")
 	private String remarks;
+	@OneToOne(mappedBy = "ipo",fetch = FetchType.LAZY)
+	private Company company;
+	
 
 }
