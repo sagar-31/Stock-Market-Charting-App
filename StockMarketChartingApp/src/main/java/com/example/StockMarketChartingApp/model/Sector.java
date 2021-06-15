@@ -12,9 +12,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
-
-
-
 @Entity
 @Table(name = "Sector")
 public class Sector {
@@ -26,6 +23,28 @@ public class Sector {
 	@Column(name = "Brief")
 	private String brief;
 	@OneToMany(mappedBy = "sector",fetch = FetchType.LAZY)
-	private List<Company> company =  new ArrayList<>();
+	private List<Company> companies =  new ArrayList<>();
+	public String getSectorName() {
+		return sectorName;
+	}
+	public void setSectorName(String sectorName) {
+		this.sectorName = sectorName;
+	}
+	public String getBrief() {
+		return brief;
+	}
+	public void setBrief(String brief) {
+		this.brief = brief;
+	}
+	public List<Company> getCompanies() {
+		return companies;
+	}
+	public void addCompany(Company company) {
+		this.companies.add(company);
+	}
+	public Integer getId() {
+		return id;
+	}
+	
 
 }

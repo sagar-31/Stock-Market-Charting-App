@@ -31,6 +31,52 @@ public class IPO {
 	private String remarks;
 	@OneToOne(mappedBy = "ipo",fetch = FetchType.LAZY)
 	private Company company;
+	public String getCompanyName() {
+		return companyName;
+	}
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+	public String getStockExchange() {
+		return stockExchange;
+	}
+	public void setStockExchange(String stockExchange) {
+		this.stockExchange = stockExchange;
+	}
+	public Long getPrice() {
+		return price;
+	}
+	public void setPrice(Long price) {
+		this.price = price;
+	}
+	public Long getNumOfShares() {
+		return numOfShares;
+	}
+	public void setNumOfShares(Long numOfShares) {
+		this.numOfShares = numOfShares;
+	}
+	public Date getDateTime() {
+		return dateTime;
+	}
+	public void setDateTime(Date dateTime) {
+		this.dateTime = dateTime;
+	}
+	public String getRemarks() {
+		return remarks;
+	}
+	public void setRemarks(String remarks) {
+		this.remarks = remarks;
+	}
+	public Company getCompany() {
+		return company;
+	}
+	public void setCompany(Company company) {
+		this.company = company;
+	}
+	public Integer getId() {
+		return id;
+	}
+	
 	
 
 }

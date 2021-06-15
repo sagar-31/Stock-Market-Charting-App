@@ -27,5 +27,39 @@ public class StockExchange {
 	private String remarks;
 	@ManyToMany
 	private List<Company> companies= new ArrayList<>();
+	public String getStockExchangeName() {
+		return stockExchangeName;
+	}
+	public void setStockExchangeName(String stockExchangeName) {
+		this.stockExchangeName = stockExchangeName;
+	}
+	public String getBrief() {
+		return brief;
+	}
+	public void setBrief(String brief) {
+		this.brief = brief;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getRemarks() {
+		return remarks;
+	}
+	public void setRemarks(String remarks) {
+		this.remarks = remarks;
+	}
+	public List<Company> getCompanies() {
+		return companies;
+	}
+	public void setCompanies(List<Company> companies) {
+		this.companies = companies;
+	}
+	public Integer getId() {
+		return id;
+	}
+	
 
 }

@@ -54,4 +54,72 @@ public class Company {
 		this.briefWriteup = briefWriteup;
 	}
 
+	public Integer getId() {
+		return id;
+	}
+
+	public String getCompanyName() {
+		return companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+
+	public long getTurnover() {
+		return turnover;
+	}
+
+	public void setTurnover(long turnover) {
+		this.turnover = turnover;
+	}
+
+	public String getCeo() {
+		return ceo;
+	}
+
+	public void setCeo(String ceo) {
+		this.ceo = ceo;
+	}
+
+	public String getBoardOfDirectors() {
+		return boardOfDirectors;
+	}
+
+	public void setBoardOfDirectors(String boardOfDirectors) {
+		this.boardOfDirectors = boardOfDirectors;
+	}
+
+	public String getBriefWriteup() {
+		return briefWriteup;
+	}
+
+	public void setBriefWriteup(String briefWriteup) {
+		this.briefWriteup = briefWriteup;
+	}
+
+	public IPO getIpo() {
+		return ipo;
+	}
+	
+	public List<StockExchange> getStockExchanges() {
+		return stockExchanges;
+	}
+
+	public void setStockExchanges(List<StockExchange> stockExchanges) {
+		this.stockExchanges = stockExchanges;
+	}
+
+	public Sector getSector() {
+		return sector;
+	}
+
+	public void setSector(Sector sector) {
+		this.sector = sector;
+	}
+
+	public List<StockPrice> getStockPrices() {
+		return stockPrices;
+	}
+
 }

@@ -33,5 +33,51 @@ public class StockPrice {
 	private String briefWriteup;
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Company company;
+	public Integer getCompanyCode() {
+		return CompanyCode;
+	}
+	public void setCompanyCode(Integer companyCode) {
+		CompanyCode = companyCode;
+	}
+	public String getStockExchange() {
+		return stockExchange;
+	}
+	public void setStockExchange(String stockExchange) {
+		this.stockExchange = stockExchange;
+	}
+	public String getPrice() {
+		return price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	public Time getTime() {
+		return time;
+	}
+	public void setTime(Time time) {
+		this.time = time;
+	}
+	public String getBriefWriteup() {
+		return briefWriteup;
+	}
+	public void setBriefWriteup(String briefWriteup) {
+		this.briefWriteup = briefWriteup;
+	}
+	public Company getCompany() {
+		return company;
+	}
+	public void setCompany(Company company) {
+		this.company = company;
+	}
+	public Integer getId() {
+		return id;
+	}
+	
 
 }
