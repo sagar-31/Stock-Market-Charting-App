@@ -16,10 +16,6 @@ public class IpoService {
 	@Autowired
 	IpoRepo repository;
 	
-	public IPO saveIpo(IPO ipo) {
-		return repository.save(ipo);
-	}
-	
 	public IPO updateIpo(IPO ipo) {
 		IPO existingIpo = repository.findById(ipo.getId()).orElse(null);
 		existingIpo.setPrice(ipo.getPrice());

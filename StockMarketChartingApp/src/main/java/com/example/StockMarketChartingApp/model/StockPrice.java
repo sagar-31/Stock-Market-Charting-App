@@ -33,6 +33,8 @@ public class StockPrice {
 	private String briefWriteup;
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Company company;
+	@ManyToOne(fetch = FetchType.LAZY)
+	private CompanyCode code;
 	public Integer getCompanyCode() {
 		return CompanyCode;
 	}

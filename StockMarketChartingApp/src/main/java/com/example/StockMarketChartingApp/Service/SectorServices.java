@@ -15,16 +15,5 @@ public class SectorServices {
 	@Autowired
 	sectorRepo repo;
 	
-	public Sector saveSector(Sector sector) {
-		return repo.save(sector);
-	}	
-	
-	public List<Sector> getSectors() {
-		return repo.findAll();
-	}
-	
-	public Sector findById(int id) {
-		return repo.findById(id).orElse(null);
-	}
 
 }

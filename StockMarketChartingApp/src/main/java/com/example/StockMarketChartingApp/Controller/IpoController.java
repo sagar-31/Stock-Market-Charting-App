@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.StockMarketChartingApp.Repository.IpoRepo;
 import com.example.StockMarketChartingApp.Service.IpoService;
 import com.example.StockMarketChartingApp.model.IPO;
 
@@ -16,16 +18,17 @@ import com.example.StockMarketChartingApp.model.IPO;
 public class IpoController {
 	
 	@Autowired
-	IpoService service;
+	IpoRepo repo;
 	
-	@PutMapping("/updateIpo")
-	public IPO updateIpo(@RequestBody IPO ipo) {
-		return service.updateIpo(ipo);
+	@GetMapping("/getAllIpos")
+	public List<IPO> getAllIpos(){
+		return repo.findAll();
+	}
+	@PostMapping("/addIpo")
+	public String addIpo(@RequestBody IPO ipo) {
+		repo.save(ipo);
+		return "IPO published";
 	}
 	
-	@GetMapping("/ipos")
-	public List<IPO> getIpos(){
-		return service.getIpos();
-	}
 
 }

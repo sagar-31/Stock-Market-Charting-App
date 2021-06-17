@@ -24,6 +24,10 @@ public class Sector {
 	private String brief;
 	@OneToMany(mappedBy = "sector",fetch = FetchType.LAZY)
 	private List<Company> companies =  new ArrayList<>();
+	
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	public String getSectorName() {
 		return sectorName;
 	}
@@ -45,6 +49,11 @@ public class Sector {
 	public Integer getId() {
 		return id;
 	}
-	
+
+//
+//	
+//	
+//	
+//	
 
 }

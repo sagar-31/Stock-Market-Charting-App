@@ -15,13 +15,17 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name = "company")
 public class Company {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue
 	private Integer id;
-	@Column(name = "Company_Name")
+	@Column(name = "Company_Name") 
 	private String companyName;
 	@Column(name = "Turnover")
 	private long turnover;
@@ -29,16 +33,23 @@ public class Company {
 	private String ceo;
 	@Column(name = "board_of_Directors")
 	private String boardOfDirectors;
+	@Column(name = "sectorName")
+	private String sectorName;
 	@Column(name = "Brief_Writeup")
 	private String briefWriteup;
 	@OneToOne(fetch = FetchType.LAZY)
 	private IPO ipo;
 	@ManyToMany(mappedBy = "companies")
+	@JsonIgnore
 	private List<StockExchange> stockExchanges = new ArrayList<>();
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnore
 	private Sector sector;
 	@OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
+	@JsonIgnore
 	private List<StockPrice> stockPrices = new ArrayList<>();
+	@OneToMany(mappedBy = "company")
+	private List<CompanyCode> codes= new ArrayList<>();
 
 	public Company() {
 
@@ -56,6 +67,9 @@ public class Company {
 
 	public Integer getId() {
 		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getCompanyName() {
@@ -81,6 +95,13 @@ public class Company {
 	public void setCeo(String ceo) {
 		this.ceo = ceo;
 	}
+	public String getSectorName() {
+		return sectorName;
+	}
+
+	public void setSectorName(String sectorName) {
+		this.sectorName = sectorName;
+	}
 
 	public String getBoardOfDirectors() {
 		return boardOfDirectors;
@@ -97,8 +118,8 @@ public class Company {
 	public void setBriefWriteup(String briefWriteup) {
 		this.briefWriteup = briefWriteup;
 	}
-
-	public IPO getIpo() {
+	@JsonBackReference(value = "ipo")
+	public IPO getIpoId() {
 		return ipo;
 	}
 	

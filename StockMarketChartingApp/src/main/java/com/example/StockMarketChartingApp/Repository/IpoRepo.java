@@ -7,5 +7,6 @@ import com.example.StockMarketChartingApp.model.IPO;
 
 @Repository
 public interface IpoRepo extends JpaRepository<IPO, Integer> {
+	
 
 }

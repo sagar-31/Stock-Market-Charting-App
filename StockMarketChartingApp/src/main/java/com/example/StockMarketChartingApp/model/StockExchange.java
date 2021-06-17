@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -27,6 +28,8 @@ public class StockExchange {
 	private String remarks;
 	@ManyToMany
 	private List<Company> companies= new ArrayList<>();
+	@OneToMany(mappedBy = "stockExchange")
+	private List<CompanyCode> codes= new ArrayList<>();
 	public String getStockExchangeName() {
 		return stockExchangeName;
 	}
